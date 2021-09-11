@@ -43,6 +43,7 @@ export type DropzoneAreaBaseProps = {
   Icon?: React.ComponentType;
   maxFileSize?: number;
   dropzoneText?: string;
+  dropzoneText2?: string;
   previewText?: string;
   showPreviews?: boolean;
   showPreviewsInDropzone?: boolean;
@@ -66,6 +67,7 @@ export type DropzoneAreaBaseProps = {
   clearOnUnmount?: boolean;
   dropzoneClass?: string;
   dropzoneParagraphClass?: string;
+  dropzoneParagraphClass2?: string;
   disableRejectionFeedback?: boolean;
   onAdd?: (newFiles: FileObject[]) => void;
   onDelete?: (deletedFileObject: FileObject, index: number) => void;

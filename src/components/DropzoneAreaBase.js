@@ -202,8 +202,10 @@ class DropzoneAreaBase extends React.PureComponent {
             disableRejectionFeedback,
             dropzoneClass,
             dropzoneParagraphClass,
+            dropzoneParagraphClass2,
             dropzoneProps,
             dropzoneText,
+            dropzoneText2,
             fileObjects,
             filesLimit,
             getPreviewIcon,
@@ -258,6 +260,13 @@ class DropzoneAreaBase extends React.PureComponent {
                                     className={clsx(classes.text, dropzoneParagraphClass)}
                                 >
                                     {dropzoneText}
+                                </Typography>
+                                <Typography
+                                    variant="h5"
+                                    component="p"
+                                    className={clsx(classes.text, dropzoneParagraphClass2)}
+                                >
+                                    {dropzoneText2}
                                 </Typography>
                                 {Icon ? (
                                     <Icon className={classes.icon} />
@@ -388,6 +397,7 @@ DropzoneAreaBase.propTypes = {
     dropzoneClass: PropTypes.string,
     /** Custom CSS class name for text inside the container. */
     dropzoneParagraphClass: PropTypes.string,
+    dropzoneParagraphClass2: PropTypes.string,
     /** Disable feedback effect when dropping rejected files. */
     disableRejectionFeedback: PropTypes.bool,
     /** Shows previews **BELOW** the dropzone. */
