@@ -16,29 +16,11 @@ var _getPrototypeOf = _interopDefault(require('@babel/runtime/helpers/getPrototy
 var _objectWithoutProperties = _interopDefault(require('@babel/runtime/helpers/objectWithoutProperties'));
 var PropTypes = _interopDefault(require('prop-types'));
 var React = require('react');
-var Snackbar = _interopDefault(require('@material-ui/core/Snackbar'));
-var Typography = _interopDefault(require('@material-ui/core/Typography'));
-var styles$3 = require('@material-ui/core/styles');
-var AttachFileIcon = _interopDefault(require('@material-ui/icons/AttachFile'));
-var CloudUploadIcon = _interopDefault(require('@material-ui/icons/CloudUpload'));
+var material = require('@mui/material');
+var styles$3 = require('@mui/styles');
+var iconsMaterial = require('@mui/icons-material');
 var clsx = _interopDefault(require('clsx'));
 var Dropzone = _interopDefault(require('react-dropzone'));
-var Chip = _interopDefault(require('@material-ui/core/Chip'));
-var Fab = _interopDefault(require('@material-ui/core/Fab'));
-var Grid = _interopDefault(require('@material-ui/core/Grid'));
-var DeleteIcon = _interopDefault(require('@material-ui/icons/Delete'));
-var IconButton = _interopDefault(require('@material-ui/core/IconButton'));
-var SnackbarContent = _interopDefault(require('@material-ui/core/SnackbarContent'));
-var CheckCircleIcon = _interopDefault(require('@material-ui/icons/CheckCircle'));
-var CloseIcon = _interopDefault(require('@material-ui/icons/Close'));
-var ErrorIcon = _interopDefault(require('@material-ui/icons/Error'));
-var InfoIcon = _interopDefault(require('@material-ui/icons/Info'));
-var WarningIcon = _interopDefault(require('@material-ui/icons/Warning'));
-var Button = _interopDefault(require('@material-ui/core/Button'));
-var Dialog = _interopDefault(require('@material-ui/core/Dialog'));
-var DialogActions = _interopDefault(require('@material-ui/core/DialogActions'));
-var DialogContent = _interopDefault(require('@material-ui/core/DialogContent'));
-var DialogTitle = _interopDefault(require('@material-ui/core/DialogTitle'));
 
 function isImage(file) {
   if (file.type.split('/')[0] === 'image') {
@@ -158,7 +140,7 @@ var styles = function styles(_ref) {
   };
 };
 
-var _ref3 = /*#__PURE__*/React.createElement(DeleteIcon, null);
+var _ref3 = /*#__PURE__*/React.createElement(iconsMaterial.Delete, null);
 
 function PreviewList(_ref2) {
   var fileObjects = _ref2.fileObjects,
@@ -172,7 +154,7 @@ function PreviewList(_ref2) {
       getPreviewIcon = _ref2.getPreviewIcon;
 
   if (useChipsForPreview) {
-    return /*#__PURE__*/React.createElement(Grid, _extends({
+    return /*#__PURE__*/React.createElement(material.Grid, _extends({
       spacing: 1,
       direction: "row"
     }, previewGridProps.container, {
@@ -181,11 +163,11 @@ function PreviewList(_ref2) {
     }), fileObjects.map(function (fileObject, i) {
       var _fileObject$file$name, _fileObject$file;
 
-      return /*#__PURE__*/React.createElement(Grid, _extends({}, previewGridProps.item, {
+      return /*#__PURE__*/React.createElement(material.Grid, _extends({}, previewGridProps.item, {
         item: true,
         key: "".concat((_fileObject$file$name = (_fileObject$file = fileObject.file) === null || _fileObject$file === void 0 ? void 0 : _fileObject$file.name) !== null && _fileObject$file$name !== void 0 ? _fileObject$file$name : 'file', "-").concat(i),
         className: classes.imageContainer
-      }), /*#__PURE__*/React.createElement(Chip, _extends({
+      }), /*#__PURE__*/React.createElement(material.Chip, _extends({
         variant: "outlined"
       }, previewChipProps, {
         label: fileObject.file.name,
@@ -194,7 +176,7 @@ function PreviewList(_ref2) {
     }));
   }
 
-  return /*#__PURE__*/React.createElement(Grid, _extends({
+  return /*#__PURE__*/React.createElement(material.Grid, _extends({
     spacing: 8
   }, previewGridProps.container, {
     container: true,
@@ -202,16 +184,16 @@ function PreviewList(_ref2) {
   }), fileObjects.map(function (fileObject, i) {
     var _fileObject$file$name2, _fileObject$file2;
 
-    return /*#__PURE__*/React.createElement(Grid, _extends({
+    return /*#__PURE__*/React.createElement(material.Grid, _extends({
       xs: 4
     }, previewGridProps.item, {
       item: true,
       key: "".concat((_fileObject$file$name2 = (_fileObject$file2 = fileObject.file) === null || _fileObject$file2 === void 0 ? void 0 : _fileObject$file2.name) !== null && _fileObject$file$name2 !== void 0 ? _fileObject$file$name2 : 'file', "-").concat(i),
       className: clsx(classes.imageContainer, previewGridClasses.item)
-    }), getPreviewIcon(fileObject, classes), showFileNames && /*#__PURE__*/React.createElement(Typography, {
+    }), getPreviewIcon(fileObject, classes), showFileNames && /*#__PURE__*/React.createElement(material.Typography, {
       variant: "body1",
       component: "p"
-    }, fileObject.file.name), /*#__PURE__*/React.createElement(Fab, {
+    }, fileObject.file.name), /*#__PURE__*/React.createElement(material.Fab, {
       onClick: handleRemove(i),
       "aria-label": "Delete",
       className: classes.removeButton
@@ -235,10 +217,10 @@ var PreviewList$1 = styles$3.withStyles(styles, {
 })(PreviewList);
 
 var variantIcon = {
-  success: CheckCircleIcon,
-  warning: WarningIcon,
-  error: ErrorIcon,
-  info: InfoIcon
+  success: iconsMaterial.CheckCircle,
+  warning: iconsMaterial.Warning,
+  error: iconsMaterial.Error,
+  info: iconsMaterial.Info
 };
 
 var styles$1 = function styles(theme) {
@@ -279,7 +261,7 @@ function SnackbarContentWrapper(props) {
       other = _objectWithoutProperties(props, ["classes", "className", "message", "onClose", "variant"]);
 
   var Icon = variantIcon[variant];
-  return /*#__PURE__*/React.createElement(SnackbarContent, _extends({
+  return /*#__PURE__*/React.createElement(material.SnackbarContent, _extends({
     className: clsx(classes["".concat(variant, "Alert")], className),
     "aria-describedby": "client-snackbar",
     message: /*#__PURE__*/React.createElement("span", {
@@ -288,13 +270,13 @@ function SnackbarContentWrapper(props) {
     }, /*#__PURE__*/React.createElement(Icon, {
       className: classes.icon
     }), message),
-    action: [/*#__PURE__*/React.createElement(IconButton, {
+    action: [/*#__PURE__*/React.createElement(material.IconButton, {
       key: "close",
       "aria-label": "Close",
       color: "inherit",
       className: classes.closeButton,
       onClick: onClose
-    }, /*#__PURE__*/React.createElement(CloseIcon, {
+    }, /*#__PURE__*/React.createElement(iconsMaterial.Close, {
       className: classes.icon
     }))]
   }, other));
@@ -382,7 +364,7 @@ var defaultGetPreviewIcon = function defaultGetPreviewIcon(fileObject, classes) 
     });
   }
 
-  return /*#__PURE__*/React.createElement(AttachFileIcon, {
+  return /*#__PURE__*/React.createElement(iconsMaterial.AttachFile, {
     className: classes.image
   });
 };
@@ -591,8 +573,10 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
           disableRejectionFeedback = _this$props4.disableRejectionFeedback,
           dropzoneClass = _this$props4.dropzoneClass,
           dropzoneParagraphClass = _this$props4.dropzoneParagraphClass,
+          dropzoneParagraphClass2 = _this$props4.dropzoneParagraphClass2,
           dropzoneProps = _this$props4.dropzoneProps,
           dropzoneText = _this$props4.dropzoneText,
+          dropzoneText2 = _this$props4.dropzoneText2,
           fileObjects = _this$props4.fileObjects,
           filesLimit = _this$props4.filesLimit,
           getPreviewIcon = _this$props4.getPreviewIcon,
@@ -632,13 +616,17 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
           className: clsx(classes.root, dropzoneClass, isDragActive && classes.active, !disableRejectionFeedback && isDragReject && classes.invalid)
         }), /*#__PURE__*/React.createElement("input", getInputProps(inputProps)), /*#__PURE__*/React.createElement("div", {
           className: classes.textContainer
-        }, /*#__PURE__*/React.createElement(Typography, {
+        }, /*#__PURE__*/React.createElement(material.Typography, {
           variant: "h5",
           component: "p",
           className: clsx(classes.text, dropzoneParagraphClass)
-        }, dropzoneText), Icon ? /*#__PURE__*/React.createElement(Icon, {
+        }, dropzoneText), /*#__PURE__*/React.createElement(material.Typography, {
+          variant: "h5",
+          component: "p",
+          className: clsx(classes.text, dropzoneParagraphClass2)
+        }, dropzoneText2), Icon ? /*#__PURE__*/React.createElement(Icon, {
           className: classes.icon
-        }) : /*#__PURE__*/React.createElement(CloudUploadIcon, {
+        }) : /*#__PURE__*/React.createElement(iconsMaterial.CloudUpload, {
           className: classes.icon
         })), previewsInDropzoneVisible && /*#__PURE__*/React.createElement(PreviewList$1, {
           fileObjects: fileObjects,
@@ -650,7 +638,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
           previewGridClasses: previewGridClasses,
           previewGridProps: previewGridProps
         }));
-      }), previewsVisible && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Typography, {
+      }), previewsVisible && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(material.Typography, {
         variant: "subtitle1",
         component: "span"
       }, previewText), /*#__PURE__*/React.createElement(PreviewList$1, {
@@ -662,7 +650,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
         previewChipProps: previewChipProps,
         previewGridClasses: previewGridClasses,
         previewGridProps: previewGridProps
-      })), (typeof showAlerts === 'boolean' && showAlerts || Array.isArray(showAlerts) && showAlerts.includes(snackbarVariant)) && /*#__PURE__*/React.createElement(Snackbar, _extends({
+      })), (typeof showAlerts === 'boolean' && showAlerts || Array.isArray(showAlerts) && showAlerts.includes(snackbarVariant)) && /*#__PURE__*/React.createElement(material.Snackbar, _extends({
         anchorOrigin: defaultSnackbarAnchorOrigin,
         autoHideDuration: 6000
       }, alertSnackbarProps, {
@@ -761,6 +749,7 @@ process.env.NODE_ENV !== "production" ? DropzoneAreaBase.propTypes = {
 
   /** Custom CSS class name for text inside the container. */
   dropzoneParagraphClass: PropTypes.string,
+  dropzoneParagraphClass2: PropTypes.string,
 
   /** Disable feedback effect when dropping rejected files. */
   disableRejectionFeedback: PropTypes.bool,
@@ -1256,15 +1245,15 @@ var DropzoneDialogBase = /*#__PURE__*/function (_React$PureComponent) {
           submitButtonText = dropzoneDialogProps.submitButtonText; // Submit button state
 
       var submitDisabled = dropzoneAreaProps.fileObjects.length === 0;
-      return /*#__PURE__*/React.createElement(Dialog, _extends({}, dialogProps, {
+      return /*#__PURE__*/React.createElement(material.Dialog, _extends({}, dialogProps, {
         fullWidth: fullWidth,
         maxWidth: maxWidth,
         onClose: onClose,
         open: open
-      }), /*#__PURE__*/React.createElement(DialogTitle, null, dialogTitle), /*#__PURE__*/React.createElement(DialogContent, null, /*#__PURE__*/React.createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/React.createElement(DialogActions, null, /*#__PURE__*/React.createElement(Button, {
+      }), /*#__PURE__*/React.createElement(material.DialogTitle, null, dialogTitle), /*#__PURE__*/React.createElement(material.DialogContent, null, /*#__PURE__*/React.createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/React.createElement(material.DialogActions, null, /*#__PURE__*/React.createElement(material.Button, {
         color: "primary",
         onClick: onClose
-      }, cancelButtonText), /*#__PURE__*/React.createElement(Button, {
+      }, cancelButtonText), /*#__PURE__*/React.createElement(material.Button, {
         color: "primary",
         disabled: submitDisabled,
         onClick: onSave

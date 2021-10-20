@@ -1,20 +1,15 @@
-import IconButton from '@material-ui/core/IconButton';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
-import {withStyles} from '@material-ui/core/styles';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CloseIcon from '@material-ui/icons/Close';
-import ErrorIcon from '@material-ui/icons/Error';
-import InfoIcon from '@material-ui/icons/Info';
-import WarningIcon from '@material-ui/icons/Warning';
+import {withStyles} from '@mui/styles';
+import {IconButton, SnackbarContent} from '@mui/material'
+import {Warning,Info,Error,Close,CheckCircle} from '@mui/icons-material'
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 
 const variantIcon = {
-    success: CheckCircleIcon,
-    warning: WarningIcon,
-    error: ErrorIcon,
-    info: InfoIcon,
+    success: CheckCircle,
+    warning: Warning,
+    error: Error,
+    info: Info,
 };
 
 const styles = (theme) => ({
@@ -66,7 +61,7 @@ function SnackbarContentWrapper(props) {
                     className={classes.closeButton}
                     onClick={onClose}
                 >
-                    <CloseIcon className={classes.icon} />
+                    <Close className={classes.icon} />
                 </IconButton>,
             ]}
             {...other}

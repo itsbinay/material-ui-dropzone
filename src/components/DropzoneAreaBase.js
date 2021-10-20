@@ -1,8 +1,6 @@
-import Snackbar from '@material-ui/core/Snackbar';
-import Typography from '@material-ui/core/Typography';
-import {withStyles} from '@material-ui/core/styles';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import { Snackbar, Typography } from '@mui/material';
+import {withStyles} from '@mui/styles';
+import {AttachFile, CloudUpload} from '@mui/icons-material'
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
@@ -74,7 +72,7 @@ const defaultGetPreviewIcon = (fileObject, classes) => {
         />);
     }
 
-    return <AttachFileIcon className={classes.image} />;
+    return <AttachFile className={classes.image} />;
 };
 
 /**
@@ -271,7 +269,7 @@ class DropzoneAreaBase extends React.PureComponent {
                                 {Icon ? (
                                     <Icon className={classes.icon} />
                                 ) : (
-                                    <CloudUploadIcon className={classes.icon} />
+                                    <CloudUpload className={classes.icon} />
                                 )}
                             </div>
 

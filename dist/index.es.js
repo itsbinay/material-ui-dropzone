@@ -10,29 +10,11 @@ import _getPrototypeOf from '@babel/runtime/helpers/getPrototypeOf';
 import _objectWithoutProperties from '@babel/runtime/helpers/objectWithoutProperties';
 import PropTypes from 'prop-types';
 import { createElement, Fragment, PureComponent } from 'react';
-import Snackbar from '@material-ui/core/Snackbar';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-import AttachFileIcon from '@material-ui/icons/AttachFile';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import { Grid, Chip, Typography, Fab, SnackbarContent, IconButton, Snackbar, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import { withStyles } from '@mui/styles';
+import { Delete, Close, CheckCircle, Warning, Error, Info, CloudUpload, AttachFile } from '@mui/icons-material';
 import clsx from 'clsx';
 import Dropzone from 'react-dropzone';
-import Chip from '@material-ui/core/Chip';
-import Fab from '@material-ui/core/Fab';
-import Grid from '@material-ui/core/Grid';
-import DeleteIcon from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CloseIcon from '@material-ui/icons/Close';
-import ErrorIcon from '@material-ui/icons/Error';
-import InfoIcon from '@material-ui/icons/Info';
-import WarningIcon from '@material-ui/icons/Warning';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 
 function isImage(file) {
   if (file.type.split('/')[0] === 'image') {
@@ -152,7 +134,7 @@ var styles = function styles(_ref) {
   };
 };
 
-var _ref3 = /*#__PURE__*/createElement(DeleteIcon, null);
+var _ref3 = /*#__PURE__*/createElement(Delete, null);
 
 function PreviewList(_ref2) {
   var fileObjects = _ref2.fileObjects,
@@ -229,10 +211,10 @@ var PreviewList$1 = withStyles(styles, {
 })(PreviewList);
 
 var variantIcon = {
-  success: CheckCircleIcon,
-  warning: WarningIcon,
-  error: ErrorIcon,
-  info: InfoIcon
+  success: CheckCircle,
+  warning: Warning,
+  error: Error,
+  info: Info
 };
 
 var styles$1 = function styles(theme) {
@@ -288,7 +270,7 @@ function SnackbarContentWrapper(props) {
       color: "inherit",
       className: classes.closeButton,
       onClick: onClose
-    }, /*#__PURE__*/createElement(CloseIcon, {
+    }, /*#__PURE__*/createElement(Close, {
       className: classes.icon
     }))]
   }, other));
@@ -376,7 +358,7 @@ var defaultGetPreviewIcon = function defaultGetPreviewIcon(fileObject, classes) 
     });
   }
 
-  return /*#__PURE__*/createElement(AttachFileIcon, {
+  return /*#__PURE__*/createElement(AttachFile, {
     className: classes.image
   });
 };
@@ -585,8 +567,10 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
           disableRejectionFeedback = _this$props4.disableRejectionFeedback,
           dropzoneClass = _this$props4.dropzoneClass,
           dropzoneParagraphClass = _this$props4.dropzoneParagraphClass,
+          dropzoneParagraphClass2 = _this$props4.dropzoneParagraphClass2,
           dropzoneProps = _this$props4.dropzoneProps,
           dropzoneText = _this$props4.dropzoneText,
+          dropzoneText2 = _this$props4.dropzoneText2,
           fileObjects = _this$props4.fileObjects,
           filesLimit = _this$props4.filesLimit,
           getPreviewIcon = _this$props4.getPreviewIcon,
@@ -630,9 +614,13 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
           variant: "h5",
           component: "p",
           className: clsx(classes.text, dropzoneParagraphClass)
-        }, dropzoneText), Icon ? /*#__PURE__*/createElement(Icon, {
+        }, dropzoneText), /*#__PURE__*/createElement(Typography, {
+          variant: "h5",
+          component: "p",
+          className: clsx(classes.text, dropzoneParagraphClass2)
+        }, dropzoneText2), Icon ? /*#__PURE__*/createElement(Icon, {
           className: classes.icon
-        }) : /*#__PURE__*/createElement(CloudUploadIcon, {
+        }) : /*#__PURE__*/createElement(CloudUpload, {
           className: classes.icon
         })), previewsInDropzoneVisible && /*#__PURE__*/createElement(PreviewList$1, {
           fileObjects: fileObjects,
@@ -755,6 +743,7 @@ process.env.NODE_ENV !== "production" ? DropzoneAreaBase.propTypes = {
 
   /** Custom CSS class name for text inside the container. */
   dropzoneParagraphClass: PropTypes.string,
+  dropzoneParagraphClass2: PropTypes.string,
 
   /** Disable feedback effect when dropping rejected files. */
   disableRejectionFeedback: PropTypes.bool,
