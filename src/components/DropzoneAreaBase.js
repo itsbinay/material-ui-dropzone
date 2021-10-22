@@ -25,7 +25,7 @@ const styles = ({palette, shape, spacing}) => ({
         minHeight: '250px',
         backgroundColor: 'white',
         border: 'dashed',
-        borderColor: palette.divider,
+        borderColor: 'grey',
         borderRadius: shape.borderRadius,
         boxSizing: 'border-box',
         cursor: 'pointer',
@@ -34,7 +34,7 @@ const styles = ({palette, shape, spacing}) => ({
     active: {
         animation: '$progress 2s linear infinite !important',
         // eslint-disable-next-line max-len
-        backgroundImage: `repeating-linear-gradient(-45deg, ${'white'}, ${'white'} 25px, ${palette.divider} 25px, ${palette.divider} 50px)`,
+        backgroundImage: `repeating-linear-gradient(-45deg, ${'white'}, ${'white'} 25px, ${'grey'} 25px, ${'grey'} 50px)`,
         backgroundSize: '150% 100%',
         border: 'solid',
         borderColor: palette.primary.light,
