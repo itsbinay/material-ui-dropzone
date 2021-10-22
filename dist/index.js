@@ -314,7 +314,7 @@ var styles$2 = function styles(_ref) {
       position: 'relative',
       width: '100%',
       minHeight: '250px',
-      backgroundColor: palette.background.paper,
+      backgroundColor: 'white',
       border: 'dashed',
       borderColor: palette.divider,
       borderRadius: shape.borderRadius,
@@ -325,7 +325,7 @@ var styles$2 = function styles(_ref) {
     active: {
       animation: '$progress 2s linear infinite !important',
       // eslint-disable-next-line max-len
-      backgroundImage: "repeating-linear-gradient(-45deg, ".concat(palette.background.paper, ", ").concat(palette.background.paper, " 25px, ").concat(palette.divider, " 25px, ").concat(palette.divider, " 50px)"),
+      backgroundImage: "repeating-linear-gradient(-45deg, ".concat('white', ", ", 'white', " 25px, ", palette.divider, " 25px, ").concat(palette.divider, " 50px)"),
       backgroundSize: '150% 100%',
       border: 'solid',
       borderColor: palette.primary.light
