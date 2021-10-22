@@ -1,4 +1,4 @@
-import { Button,Dialog,DialogActions,DialogContent,DialogTitle } from '@mui/material';
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@mui/material';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 

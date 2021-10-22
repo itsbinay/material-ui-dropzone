@@ -1,6 +1,6 @@
-import { Snackbar, Typography } from '@mui/material';
+import {Snackbar, Typography} from '@mui/material';
 import {withStyles} from '@mui/styles';
-import {AttachFile, CloudUpload} from '@mui/icons-material'
+import {AttachFile, CloudUpload} from '@mui/icons-material';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';

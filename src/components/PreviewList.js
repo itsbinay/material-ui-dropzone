@@ -1,6 +1,6 @@
-import { Chip,Fab,Grid,Typography } from '@mui/material';
+import {Chip, Fab, Grid, Typography} from '@mui/material';
 import {withStyles} from '@mui/styles';
-import {Delete} from '@mui/icons-material'
+import {Delete} from '@mui/icons-material';
 import clsx from 'clsx';
 import * as React from 'react';
 import PropTypes from 'prop-types';

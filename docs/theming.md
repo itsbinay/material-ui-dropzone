@@ -41,11 +41,11 @@
 ### Sample theme override
 
 ```jsx
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider , createTheme  } from "@mui/material/styles";
 
 import DropzoneArea from '../src/components/DropzoneArea';
 
-const theme = createMuiTheme({
+const theme = createTheme ({
   overrides: {
     MuiDropzoneSnackbar: {
       errorAlert: {
@@ -60,7 +60,7 @@ const theme = createMuiTheme({
   }
 });
 
-<MuiThemeProvider theme={theme}>
+<ThemeProvider  theme={theme}>
   <DropzoneArea maxFileSize={1} />
-</MuiThemeProvider>
+</ThemeProvider >
 ```

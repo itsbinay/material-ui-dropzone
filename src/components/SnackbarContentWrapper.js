@@ -1,6 +1,6 @@
 import {withStyles} from '@mui/styles';
-import {IconButton, SnackbarContent} from '@mui/material'
-import {Warning,Info,Error,Close,CheckCircle} from '@mui/icons-material'
+import {IconButton, SnackbarContent} from '@mui/material';
+import {Warning, Info, Error, Close, CheckCircle} from '@mui/icons-material';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
